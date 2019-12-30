@@ -18,8 +18,8 @@
 <body>
 
     <script>
-        DIV_WIDTH=100;
-        COLUMNS = 2;
+        DIV_WIDTH=100;              //宽度
+        COLUMNS = 5;                //长度
         window.onload = function(){
             createEle()
         }  
@@ -36,7 +36,10 @@
             append(arr) 
         }  
         function append(divArr){
-            let heightArr = [0,0,0,0,0,0]; 
+            let heightArr = []; 
+            for(let i=0;i<COLUMNS;i++){
+                heightArr.push(0);
+            }
             for(let i=0;i<divArr.length;i++){
                 let index = getMinIndex(heightArr);
                 let left = DIV_WIDTH * index;
